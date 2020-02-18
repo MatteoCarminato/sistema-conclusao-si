@@ -48,7 +48,7 @@ class Login extends CI_Controller {
 			{ 
 
 				$sData = array(
-					'isLogIn' 	  => true,
+					'isAdmin' 	  => true,
 					'id' 		  => $user->row()->id,
 					'user_id' 	  => $user->row()->user_id,
 					'nome' 	      => $user->row()->nome,
