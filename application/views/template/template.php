@@ -1704,8 +1704,8 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col">
-                                                                <p class="m-b-5">New Customer</p>
-                                                                <h4 class="m-b-0">852</h4>
+                                                                <p class="m-b-5">Total Clientes</p>
+                                                                <h4 class="m-b-0">160</h4>
                                                             </div>
                                                             <div class="col col-auto text-right">
                                                                 <i class="feather icon-user f-50 text-c-yellow"></i>
@@ -1719,8 +1719,8 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col">
-                                                                <p class="m-b-5">Income</p>
-                                                                <h4 class="m-b-0">$5,852</h4>
+                                                                <p class="m-b-5">OS Abertas</p>
+                                                                <h4 class="m-b-0">12</h4>
                                                             </div>
                                                             <div class="col col-auto text-right">
                                                                 <i class="feather icon-credit-card f-50 text-c-green"></i>
@@ -1734,7 +1734,7 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col">
-                                                                <p class="m-b-5">Ticket</p>
+                                                                <p class="m-b-5">Fornecedores</p>
                                                                 <h4 class="m-b-0">42</h4>
                                                             </div>
                                                             <div class="col col-auto text-right">
@@ -1749,7 +1749,7 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col">
-                                                                <p class="m-b-5">Orders</p>
+                                                                <p class="m-b-5">OS Aberta</p>
                                                                 <h4 class="m-b-0">$5,242</h4>
                                                             </div>
                                                             <div class="col col-auto text-right">

@@ -67,7 +67,7 @@
                                             <h3 class="text-center">Acessar Painel</h3>
                                         </div>
 
-                                        <fieldset>
+                                        <fieldset class="col-md-12">
                                             <?php if($error= $this->session->flashdata('message')): ?>
                                             <div class="col-md-12"> 
                                                 <div class="alert alert-danger icons-alert">
@@ -79,11 +79,16 @@
                                             </div>
 
                                         <?php endif;  ?>
+                                        <?php if($error= $this->session->flashdata('usuario_cadastrado')): ?>
+                                            <div class="alert alert-success icons-alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <i class="icofont icofont-close-line-circled"></i>
+                                                </button>
+                                                <p><strong>Perfeito!</strong> <?= $error ?></p>
+                                            </div>
+                                        <?php endif;  ?>
 
                                         </fieldset>
-
-
-                                        <?php $this->session->flashdata('message'); ?>
                                     </div>
                                         <div class="form-group form-primary">
                                             <input type="text" name="email" id="email" class="form-control" required="" placeholder="Digite seu usuario">

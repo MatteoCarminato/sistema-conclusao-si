@@ -53,7 +53,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="md-float-material form-material">
+                    <form class="md-float-material form-material"  method="post" accept-charset="utf-8" action="<?php echo base_url()?>login/cadastrar" id="cadastrar">
                         <div class="text-center">
                             <img src="<?php echo base_url()?>assets/images/logo.png" alt="logo.png">
                         </div>
@@ -63,25 +63,44 @@
                                     <div class="col-md-12">
                                         <h3 class="text-center txt-primary">Cadastrar-se</h3>
                                     </div>
+                                    <fieldset class="col-md-12">
+                                            <?php if($error= $this->session->flashdata('message')): ?>
+                                            <div class="col-md-12"> 
+                                                <div class="alert alert-danger icons-alert">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="icofont icofont-close-line-circled"></i>
+                                                    </button>
+                                                    <p><strong>Erro!</strong> <?= $error ?></p>
+                                                </div>
+                                            </div>
+
+                                        <?php endif;  ?>
+
+                                        </fieldset>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="text" name="usuario" class="form-control" required="" placeholder="Seu usuario">
+                                    <input type="text" name="nome" id="nome" class="form-control" required="" placeholder="Seu nome">
                                     <span class="form-bar"></span>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="text" name="email" class="form-control" required="" placeholder="Seu email">
+                                    <input type="text" name="usuario" id="usuario" class="form-control" required="" placeholder="Seu usuario">
+                                    <span class="form-bar"></span>
+                                </div>
+                                <div class="form-group form-primary">
+                                    <input type="text" name="email" id="email" class="form-control" required="" placeholder="Seu email">
                                     <span class="form-bar"></span>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group form-primary">
-                                            <input type="password" name="senha" class="form-control" required="" placeholder="Sua senha">
+                                            <input type="password" name="senha1" id="senha1" class="form-control" required="" placeholder="Sua senha">
                                             <span class="form-bar"></span>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group form-primary">
-                                            <input type="password" name="confirm-password" class="form-control" required="" placeholder="Confirmar senha">
+                                            <input type="password" name="senha2" id="senha2
+                                            " class="form-control" required="" placeholder="Confirmar senha">
                                             <span class="form-bar"></span>
                                         </div>
                                     </div>
@@ -99,7 +118,7 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Registrar</button>
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Registrar</button>
                                     </div>
                                 </div>
                                 <hr>
@@ -167,6 +186,21 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
+
+    <script>
+      $(function(){
+        $("#inputSubmit").click(function(){
+          var senha = $("#senha1").val();
+          var senha2 = $("#senha2").val();
+          if(senha != senha2){
+            event.preventDefault();
+            alert("As senhas não são iguais!");
+          }
+        });
+      });
+    </script>
+
+
     <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/jquery/js/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/popper.js/js/popper.min.js"></script>

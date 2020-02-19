@@ -15,6 +15,11 @@ class Login_model extends CI_Model {
 			->get();
 	}
 
+	public function create($data = array())
+	{
+		return $this->db->insert('admin', $data);
+	}
+
 	public function last_login($id = null)
 	{
 		return $this->db->set('last_login', date('Y-m-d H:i:s'))
