@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Adminty - Premium Admin Template by Colorlib </title>
+    <title>Mecanica Tibagi | <?php echo $titulo; ?> </title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -21,17 +21,18 @@
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>/assets/bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/bower_components/bootstrap/css/bootstrap.min.css">
     <!-- radial chart.css -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/pages/chart/radial/css/radial.css" type="text/css" media="all">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/icon/feather/css/feather.css">
 
+
     <!-- Data Table Css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">   
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/jquery.mCustomScrollbar.css">
@@ -333,6 +334,11 @@
                                             </a>
                                             <ul class="pcoded-submenu">
                                                 <li class=" ">
+                                                    <a href="<?php echo base_url('clientes')?>">
+                                                        <span class="pcoded-mtext">Listar Cliente</span>
+                                                    </a>
+                                                </li>
+                                                <li class=" ">
                                                     <a href="menu-static.htm">
                                                         <span class="pcoded-mtext">Cadastrar Cliente</span>
                                                     </a>
@@ -340,11 +346,6 @@
                                                 <li class=" ">
                                                     <a href="menu-header-fixed.htm">
                                                         <span class="pcoded-mtext">Alterar Cliente</span>
-                                                    </a>
-                                                </li>
-                                                <li class=" ">
-                                                    <a href="menu-compact.htm">
-                                                        <span class="pcoded-mtext">Dados do Cliente</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -1854,42 +1855,43 @@
     <p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-    <!-- Warning Section Ends -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-    
+    <!-- Warning Section Ends -->    
     <!-- Required Jquery -->
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/jquery/js/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/popper.js/js/popper.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/bootstrap/js/bootstrap.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/modernizr/js/modernizr.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/modernizr/js/css-scrollbars.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/modernizr/js/css-scrollbars.js"></script>
+
+    <!-- Validation js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/pages/form-validation/validate.js"></script>
 
     <!-- data-table js -->
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
     <script src="<?php echo base_url()?>assets/pages/data-table/js/jszip.min.js"></script>
     <script src="<?php echo base_url()?>assets/pages/data-table/js/pdfmake.min.js"></script>
     <script src="<?php echo base_url()?>assets/pages/data-table/js/vfs_fonts.js"></script>
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?php echo base_url()?>/assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?php echo base_url()?>assets/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
     <!-- Chart js -->
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/chart.js/js/Chart.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/chart.js/js/Chart.js"></script>
 
     <!-- i18next.min.js -->
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/i18next/js/i18next.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/assets/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/i18next/js/i18next.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 
     <!-- Google map js -->
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
@@ -1904,6 +1906,8 @@
     <script src="<?php echo base_url()?>assets/pages/widget/amchart/light.js"></script>
     <!-- Custom js -->
     <script src="<?php echo base_url()?>assets/pages/data-table/js/data-table-custom.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/pages/form-validation/form-validation.js"></script>
+
 
     <script src="<?php echo base_url()?>assets/js/pcoded.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/vartical-layout.min.js"></script>

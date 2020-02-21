@@ -12,8 +12,8 @@
                                         <div class="col-lg-8">
                                             <div class="page-header-title">
                                                 <div class="d-inline">
-                                                    <h4>Ajax DataTable</h4>
-                                                    <span>Real power of DataTables</span>
+                                                    <h4>Listar Clientes</h4>
+                                                    <!-- <span>Real power of DataTables</span> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -23,9 +23,9 @@
                                                     <li class="breadcrumb-item">
                                                         <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Data Table</a>
+                                                    <li class="breadcrumb-item"><a href="#">Clientes</a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Ajax</a>
+                                                    <li class="breadcrumb-item"><a href="#!">Listar</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -39,14 +39,9 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Ajax data source (Arrays) table start -->
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Ajax Data Source (Arrays)</h5>
-                                                        <span>The example below shows DataTables loading data for a table from arrays as the data source, where the structure of the row's data source in this example is:</span>
-
-                                                    </div>
+                                                <div class="card">  
                                                     <div class="card-block">
-                                                        <div class="table-responsive dt-responsive">
+                                                        <div class="dt-responsive table-responsive">
                                                             <table id="user_data" class="table table-striped table-bordered nowrap">
                                                                 <thead>
                                                                     <tr>
@@ -77,10 +72,6 @@
                                 </div>
                             </div>
                             <!-- Main-body end -->
-
-                            <div id="styleSelector">
-
-                            </div>
                         </div>
                     </div>
                 </div>
