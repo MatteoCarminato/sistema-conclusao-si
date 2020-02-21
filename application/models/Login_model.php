@@ -3,7 +3,7 @@
 class Login_model extends CI_Model {
 
 
-	public function checkUser($data = array())
+	public function checar_usuario($data = array())
 	{
 	   $where = "(email ='".$data['email']."' OR usuario = '".$data['email']."')";
 
@@ -15,25 +15,11 @@ class Login_model extends CI_Model {
 			->get();
 	}
 
-	public function create($data = array())
+	public function criar_admin($data = array())
 	{
 		return $this->db->insert('admin', $data);
 	}
 
-	public function last_login($id = null)
-	{
-		return $this->db->set('last_login', date('Y-m-d H:i:s'))
-			->set('ip_address', $this->input->ip_address())
-			->where('id',$this->session->userdata('id'))
-			->update('admin');
-	}
-
-	public function last_logout($id = null)
-	{
-		return $this->db->set('last_logout', date('Y-m-d H:i:s'))
-			->where('id', $this->session->userdata('id'))
-			->update('admin');
-	}
 
 }
  

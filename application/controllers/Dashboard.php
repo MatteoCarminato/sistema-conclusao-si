@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller {
  		parent::__construct();	
  		
  		if (!$this->session->userdata('isAdmin')) 
-        //redirect('logout');
+        redirect('logout');
  		
 		$this->load->model(array(
  			// 'dashboard/admin_model'  
@@ -17,7 +17,8 @@ class Dashboard extends CI_Controller {
 
  	public function index()
 	{
-		$this->load->view('template/template.php');
+		$this->template->load('template/template.php', 'template/pagina.php');
+		// $this->load->view('template/template.php');
 	}
 
 

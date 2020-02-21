@@ -42,7 +42,7 @@ class Login extends CI_Controller {
         else
         {
         	/** Checar usuario existe **/
-        	$user = $this->login_model->checkUser($userData);
+        	$user = $this->login_model->checar_usuario($userData);
 
         	if($user->num_rows() > 0) 
 			{ 
@@ -131,7 +131,7 @@ class Login extends CI_Controller {
 				'user_id'	=>$this->randomID(),	
 			);
 
-			if ($this->login_model->create($userData)) {
+			if ($this->login_model->criar_admin($userData)) {
 					$this->session->set_flashdata('usuario_cadastrado', 'Usuário cadastrado com sucesso!');
 					redirect('login');
 
