@@ -1,3 +1,4 @@
+ <script src="//code.jquery.com/jquery-2.2.2.min.js"></script>
 <div class="pcoded-content">
                     <div class="pcoded-inner-content">
                         <!-- Main-body start -->
@@ -9,8 +10,7 @@
                                         <div class="col-lg-8">
                                             <div class="page-header-title">
                                                 <div class="d-inline">
-                                                    <h4>Forms Validation</h4>
-                                                    <span>Lorem ipsum dolor sit <code>amet</code>, consectetur adipisicing elit</span>
+                                                    <h4>Cadastro de Clientes</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -20,9 +20,9 @@
                                                     <li class="breadcrumb-item">
                                                         <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Form Components</a>
+                                                    <li class="breadcrumb-item"><a href=" echo base_url('clientes')?>">Clientes</a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Form Validation</a>
+                                                    <li class="breadcrumb-item"><a href="<?php echo base_url('clientes/cadastro')?>">Cadastrar Clientes</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -38,14 +38,13 @@
                                                 <!-- Basic Inputs Validation start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Basic Inputs Validation</h5>
-                                                        <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
+                                                    
 
                                                     </div>
                                                     <div class="card-block">
                                                         <form id="main" method="post" action="/" novalidate="">
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Simple Input</label>
+                                                                <label class="col-sm-2 col-form-label">Nome Completo</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" name="name" id="name" placeholder="Text Input Validation">
                                                                     <span class="messages"></span>
@@ -180,6 +179,46 @@
                                                 <!-- Number Validation card end -->
                                                 <!-- Form components Validation card start -->
                                                 <div class="card">
+
+
+                                                    <div class="container">
+            <h2>Buscador de endereço pelo CEP</h2>
+ 
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Digite o CEP desejado
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cep">CEP:</label>
+                            <input type="text" name="cep" id="cep" class="form-control" autofocus required placeholder="Somente os números do CEP" />
+                        </div>
+                        <div class="form-group">
+                            <button id="btn_consulta" class="btn btn-success">Consultar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="rua">Rua:</label>
+                            <input type="text" name="rua" id="rua" class="form-control" disabled required />
+                        </div>
+                        <div class="form-group">
+                            <label for="bairro">Bairro:</label>
+                            <input type="text" name="bairro" id="bairro" class="form-control" disabled  required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" name="cidade" id="cidade" class="form-control"  disabled required />
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado:</label>
+                            <input type="text" name="estado" id="estado" class="form-control"  disabled required size="2"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
                                                     <div class="card-header">
                                                         <h5>Form Components Validation</h5>
                                                         <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
@@ -238,6 +277,9 @@
                                                                 </div>
                                                             </div>
                                                         </form>
+
+
+
                                                     </div>
                                                 </div>
                                                 <!-- Form components Validation card end -->
@@ -254,3 +296,52 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <script>
+            
+            $(function(){
+                $("#btn_consulta").click(function(){
+                    var cep = $('#cep').val();
+                    if (cep == '') {
+                        alert('Informe o CEP antes de continuar');
+                        $('#cep').focus();
+                        return false;
+                    }
+                    $('#btn_consulta').html ('Aguarde...');
+                    $.post('<?php echo base_url('clientes/consulta')?> ',
+                    {
+                        cep : cep
+                    }, 
+                    function(dados){
+                        $('#rua').val(dados.logradouro);
+                        $('#bairro').val(dados.bairro);
+                        $('#cidade').val(dados.localidade);
+                        $('#estado').val(dados.uf);
+                        $('#btn_consulta').html('Consultar');
+                    }, 'json');
+                });
+            });
+            
+            
+        </script>

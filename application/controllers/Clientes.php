@@ -117,6 +117,13 @@ class Clientes extends CI_Controller {
             }
     }
 
+    public function consulta()
+    {
+
+        $this->load->library('curl');
+        $cep = $this->input->post('cep');
+        echo $this->curl->consulta($cep);
+    }
     public function randomID($mode = 2, $len = 6)
     {
         $result = "";
